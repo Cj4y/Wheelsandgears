@@ -1,0 +1,56 @@
+.navbar-container {
+    background-color: #F57E20;
+    display: flex;
+    align-items: left;
+    justify-content: space-between;
+    padding: 0.2rem, 1.5rem;
+}
+a{
+    color: black;
+    line-height: 50px;
+}
+
+.logo{
+    margin-right: auto;
+}
+
+/*Medium and large screens*/
+@media all and (min-width: 600px){
+    .header { flex: 2 0px;}
+    .main {order: 1;}
+    .footer { order: 2;}
+}
+
+/*Add in prefixes to support all browsers with SASS*/
+@mixin flexbox() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+  
+  @mixin flex($values) {
+    -webkit-box-flex: $values;
+    -moz-box-flex:  $values;
+    -webkit-flex:  $values;
+    -ms-flex:  $values;
+    flex:  $values;
+  }
+  
+  @mixin order($val) {
+    -webkit-box-ordinal-group: $val;  
+    -moz-box-ordinal-group: $val;     
+    -ms-flex-order: $val;     
+    -webkit-order: $val;  
+    order: $val;
+  }
+  
+  .wrapper {
+    @include flexbox();
+  }
+  
+  .item {
+    @include flex(1 200px);
+    @include order(2);
+  }
