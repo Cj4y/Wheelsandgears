@@ -5,36 +5,59 @@ import {
   HashRouter
 } from "react-router-dom";
 import Home from "./Home-content";
+import Service from "./Products";
 import Products from "./Products";
 import About from "./About";
 import Contact from "./Contact";
  
 class Main extends Component {
-  render() {
-    return (
-        <HashRouter>
-            
-            <div>
     {/* path is /stuff as set by the NavLink component's to prop */}
-              <h1>Wheels & Gears</h1>
-              <ul className="header">
-                <li><NavLink exact to="/">Home</NavLink></li>
-                <li><NavLink to="/service">Service</NavLink></li>
-                <li><NavLink to="/products">Products</NavLink></li>
-                <li><NavLink to="/about">About</NavLink></li>
-                <li><NavLink to="/contact">Contact</NavLink></li>
-              </ul>
-              <div className="content">
+    const navLinks = [
+    {
+        text: 'Home',
+        path: '/',
+        icon: 'ion-ios-home'
+    },
+    
+    {
+        text: 'Service',
+        path: '/service',
+        icon: 'ion-ios-bonfire'
+    },
+    {
+        text: 'Products',
+        path: '/products',
+        icon: 'ion-ios-briefcase'
+    },
+    {
+        text: 'About',
+        path: '/about',
+        icon: 'ion-ios-business'
+    },
+    {
+        text: 'Contact',
+        path: '/contact',
+        icon: 'ion-ios-megaphone'
+    }
+]
+    return (
+        <div className ="Main">
+            <ResponsiveNavigation
+				navLinks={ navLinks }
+				logo={ logo }
+				background="#fff"
+				hoverBackground="#ddd"
+				linkColor="#777"
+			/>
+            <HashRouter>
                 <Route exact path="/" component={Home}/>
                 <Route path="/products" component={Products}/>
                 <Route path="/service" component={Service}/>
                 <Route path="/about" component={About}/>
                 <Route path="/contact" component={Contact}/>
-              </div>
-            </div>
-        </HashRouter>
+            </HashRouter>
+        </div>
     );
-  }
-}
+
  
 export default Main;
