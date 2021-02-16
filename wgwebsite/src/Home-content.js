@@ -1,10 +1,11 @@
 import React, { Component } from "react";
  
+import bicycle from '../public/khsgrit110.jpg';
 class Home extends Component {
   render() {
     return (
       <div>
-        <p>Duis a turpis sed lacus dapibus elementum sed eu lectus.</p>
+        <img src={bicycle} alt="Wheels & Gears"/>
       </div>
     );
   }

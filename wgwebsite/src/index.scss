@@ -1,11 +1,16 @@
+$bg-color: #FFCC00;
+
+.active {
+      background-color: #0099FF;
+}
 body {
-      background-color: #FFCC00;
+      background-color: bg-color;
       padding: 20px;
       margin: 0;
-    }
-    h1, h2, p, ul, li {
-      font-family: sans-serif;
-    }
+}
+h1, h2, p, ul, li {
+  font-family: sans-serif;
+    /*}
     ul.header li {
       display: inline;
       list-style-type: none;
@@ -32,4 +37,4 @@ body {
     }
     .content li {
       margin-bottom: 10px;
-    }
+    }*/
