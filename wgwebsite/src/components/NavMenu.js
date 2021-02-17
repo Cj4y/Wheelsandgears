@@ -1,33 +1,43 @@
 import React, { useState } from "react";
 import { Route, NavLink, HashRouter} from "react-router-dom";
 import styled from "styled-components";
-import logo from "../../public/wgfavi.ico"
+//import styled from "styled-components/native";
+import logo from "../wheelsandgearslogo.jpg"
 
 
 const Nav = styled.nav`
-  padding: 0 20px;
-  min-height: 9vh;
-  background: #1c2022;
+  padding: 1rem;
+  background: #F67F21;
   display: flex;
   justify-content: space-between;
   align-items: center;
+`;
+
+const NavLinkElem = styled(NavLink)`
+  &.active {
+    color: ${props => props.theme.orange }
+  }
 `;
 
 
 const Menu = styled.ul`
   list-style: none;
   display: flex;
-
-  Item:nth-child(2) {
-    margin: 0px 20px;
-  }
-
-  @media (max-width: 768px) {
+  justify-content: left;
+  
+  @media (max-width: 750px) {
     display: none;
   }
 `;
 
-const Item = styled.Item``;
+const Item = styled.li``;
+
+const Logo = styled.img`
+  width: 18rem;
+  height: 5rem;
+  margin: auto 0;
+`;
+
 
 const Link = styled.a`
   color: white;
@@ -44,7 +54,7 @@ const NavIcon = styled.button`
   border: none;
   outline: none;
 
-  @media (min-width: 769px) {
+  @media (min-width: 750px) {
     display: none;
   }
 `;
@@ -84,8 +94,8 @@ const OverlayMenu = styled.ul`
 
   Item {
     opacity: ${props => (props.open ? 1 : 0)};
-    font-size: 25px;
-    margin: 50px 0px;
+    font-size: 10rem;
+    margin-right: 20rem;
     transition: opacity 0.4s ease-in-out;
   }
 
@@ -98,16 +108,18 @@ const NavMenu = () => {
     const [toggle, toggleNav] = useState(false);
     return (
         <HashRouter>
-            <div className="Main">
-                <img src={logo} alt="Wheels & Gears"/>
+            <div className="Main">                
                 <Nav>
+                  <NavLinkElem exact to="/">
+                    <Logo src={logo} alt="Wheels & Gears"/>
+                  </NavLinkElem>
                     <Menu>
-                        <Item><NavLink exact to="/">Home</NavLink></Item>
-                        <Item><NavLink to="/service">Service</NavLink></Item>
-                        <Item><NavLink to="/products">Products</NavLink></Item>
-                        <Item><NavLink to="/brands">Brands</NavLink></Item>
-                        <Item><NavLink to="/about">About</NavLink></Item>
-                        <Item><NavLink to="/contact">Contact</NavLink></Item>
+                        <Item><NavLinkElem exact to="/">Home</NavLinkElem></Item>
+                        <Item><NavLinkElem to="/service">Service</NavLinkElem></Item>
+                        <Item><NavLinkElem to="/products">Products</NavLinkElem></Item>
+                        <Item><NavLinkElem to="/brands">Brands</NavLinkElem></Item>
+                        <Item><NavLinkElem to="/about">About</NavLinkElem></Item>
+                        <Item><NavLinkElem to="/contact">Contact</NavLinkElem></Item>
                     </Menu>
                     <NavIcon onClick={() => toggleNav(!toggle)}>
                     <Line open={toggle} />
