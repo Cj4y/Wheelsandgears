@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { render } from 'react-dom';
-import { Route, NavLink, HashRouter} from "react-router-dom";
+import { Route, BrowserRouter, NavLink, HashRouter} from "react-router-dom";
 import NavMenu from "./components/NavMenu"
 import Home from "./Home-content";
 import Service from "./Service";
@@ -8,8 +8,8 @@ import Products from "./Products";
 import Brands from "./Brands";
 import About from "./About";
 import Contact from "./Contact";
-import "./styles.css";
 import styled from "styled-components";
+
 
 const FlexContainer = styled.div`
   max-width: 120rem;
@@ -24,12 +24,14 @@ const Body = styled.body`
   background: #000000;
 `;
 
-function Nav (){}
+
 function Main() {
     return (      
     /* path is /stuff as set by the NavLink component's to prop */          
         <div>
+        <HashRouter>
         <NavMenu/>
+        </HashRouter>
             <div className="content">
               <HashRouter>
                 <Route exact path="/" component={Home}/>

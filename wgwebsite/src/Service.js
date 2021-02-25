@@ -1,115 +1,169 @@
 import React, { Component } from "react";
- 
-class Service extends Component {
-  render() {
-    return (
-    <div>
-        <div>
-            <h2>Service</h2>
-            <p>Bicycle maintenance and repairs on all Bicycle Brands and models</p>
-            <h3>There is no charge on installation of in-store purchased bicycle parts</h3>
-            <br></br>
-            <h2>Bronze Tune-up</h2><br></br><h2>$69</h2>
-            <h3>Includes:</h3>
-            <ol>
-                <li>Wheel timing</li>
-                <li>Headset adjustment</li>
-                <li>Gears adjustment</li>
-                <li>Brake adjustment</li>            
-                <li>Drive train lubrication</li>
-                <li>Tire pressure (check)</li>
-                <li>Safety check</li>
-            </ol>
-            <h3>*All new needed parts and installations are extra charges, plus tax</h3>
+import {useTable} from "react-table";
+import { withStyles, makeStyles } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableBody from "@material-ui/core/TableBody";
+import TableCell from "@material-ui/core/TableCell";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
+import Divider from "@material-ui/core/Divider";
+import Paper from '@material-ui/core/Paper';
+import Tuneup from "./Tuneup";
+
+const StyledTableCell = withStyles((theme) => ({
+    head: {
+      backgroundColor: theme.palette.common.black,
+      color: theme.palette.common.white,
+    },
+    body: {
+      fontSize: 14,
+    },
+  }))(TableCell);
+  
+  const StyledTableRow = withStyles((theme) => ({
+    root: {
+      '&:nth-of-type(odd)': {
+        backgroundColor: theme.palette.action.hover,
+        
+      },
+      
+    },
+  }))(TableRow);
+
+const data = [
+      { service: "Bottom bracket installation", price: "$25.00" },
+      { service: "Brake Adjustment", price: "15.00 - 25.00" },
+      { service: "Cassette/ Free wheel installation", price: "20.00" },
+      { service: "Chain installation", price: "12.00" },
+      { service: "Child carrier installation", price: "20.00" },
+      { service: "Cycle computer installation", price: "10.00" },
+      { service: "Derailleur adjustment/ installation", price: "15.00 - 25.00" },
+      { service: "Fenders installation", price: "15.00" },
+      { service: "Grips installation", price: "10.00" },
+      { service: "Handlebar tape installation", price: "15.00" },
+      { service: "Headset installation/ overhaul", price: "20.00" },
+      { service: "Hub overhaul", price: "25.00" },
+      { service: "Hydraulic brake bleeding", price: "50.00/ pair" },
+      { service: "Kickstand installation", price: "10.00" },
+      { service: "Tire/ tube installation", price: "11.00" },
+      { service: "Tubeless tire installation", price: "25.00" },
+      { service: "*Tubular install w/ glue", price: "40.00/ tire" },
+      { service: "*Tubular install w/ tape", price: "30.00/ tire" },
+      { service: ".....*Tubular tire not included", price: "*" },
+      { service: "Wheel build", price: "40.00" },
+      { service: "Wheel truing", price: "15.00 - 30.00" },
+      { service: "Rack installation", price: "15.00" },
+      { service: "Shifters installation", price: "20.00" },
+      //{ service: "All parts are extra charge plus tax", price: "" },    
+    ];
+const columns = [
+    {
+      Header: 'Service',
+      accessor: 'service',
+    },
+    {
+      Header: 'Price',
+      accessor: 'price',
+    },
+];
+  const useStyles = makeStyles((theme) => ({
+    root: {
+      display: 'flex',
+      //margin: '1.5rem',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      position: "relative",
+      top: "3rem",
+      fontFamily: 'arial',
+      
+    },
+    title: {
+      textAlign: 'center',
+      color: 'white'
+    },
+    topText:{
+      textAlign: 'center',
+    },
+    bar: {
+      backgroundColor: 'black'
+    },
+    shortDesc:{
+      padding: '1rem',
+      textAlign: 'left',
+      padding: theme.spacing(3, 6),
+    },
+    table: {
+      minWidth: 500,
+      maxWidth: "90%",
+    }
+  }));
+
+export default function Service() {
+    /*For table */
+    const classes = useStyles(); 
+    
+    // Use the state and functions returned from useTable to build your UI
+    const {
+        getTableProps,
+        getTableBodyProps,
+        headerGroups,
+        rows,
+        prepareRow,
+      } = useTable({
+        columns,
+        data,
+      });
+
+    return (
+    <div className={classes.root}>
+      <div className={classes.bar}>
+        <h2 className={classes.title}>Service</h2>
+      </div>
+      <Divider />
+        <div className={classes.shortDesc} >
+            <p>Our knowledgeable and expeienced bicycle mechanic does 
+    excellent tune-ups, repairs, and bike builds.</p>
+            <p>We provide maintenance and repairs on all bicycle brands, makes, and models.</p>
         </div>
-        <div>
-            <h2>Silver Tune-up</h2><br></br><h2>$99</h2>
-            <h3>Includes:</h3>
-            <ol>
-                <li>Wheel timing</li>
-                <li>Headset adjustment</li>
-                <li>Gears adjustment</li>
-                <li>Brake adjustment</li>            
-                <li>Drive train lubrication</li>
-                <li>Tire pressure (check)</li>
-                <li>Safety check</li>
-                <li>Bicycle full clean-uup</li>
-                <li>    Full disassembly of bicycle parts </li>
-                <li>    Clean and grease all moving parts </li>
-                <li>Full tune-up</li>
-            </ol>
-            <h3>*All new needed parts and installations are extra charges, plus tax</h3>
-        </div>
-        <div>
-        <h2>Gold Tune-up</h2><br></br><h2></h2>
-        <h3>Full overhaul inludes:</h3>
-            <ol>
-                <li>Wheel timing</li>
-                <li>Headset adjustment</li>
-                <li>Gears adjustment</li>
-                <li>Brake adjustment</li>            
-                <li>Drive train lubrication</li>
-                <li>Tire pressure (check)</li>
-                <li>Safety check</li>
-                <li>Bicycle full clean-uup</li>
-                <li>    Full disassembly of bicycle parts </li>
-                <li>    Clean and grease all moving parts </li>
-                <li>Full tune-up</li>
-                <li>Hydraulic brakes bleeding</li>
-                <li>New premiuim cables and housings</li>
-            </ol>
-            <h3>*All new needed parts and installations are extra charges, plus tax</h3>
-        </div>
-        <h2>Other Services</h2>
-        <ol>
-            <li>Bicycle rack installation</li>
-            <li>$15</li>
-            <li>Brake Adjustment</li>
-            <li>$15 - 25</li>
-            <li>Hydraulic brake bleeding front/ rear</li>
-            <li>$50/ pair</li>
-            <li>Fenders installation</li>
-            <li>$15/ set</li>
-            <li>Tubular tires</li>
-            <li>$40/ each</li>
-            <li>Internal hub flat fire change</li>
-            <li>$20</li>
-            <li>Overhaul hub</li>
-            <li>$25</li>
-            <li>Shifters replacement</li>
-            <li>$20</li>
-            <li>Tune wheel front/ rear</li>
-            <li>$15 - 30</li>
-            <li>Tire & tube installation</li>
-            <li>$11</li>
-            <li>Wheel build front/ rear</li>
-            <li>$40</li>
-            <li>Bottom bracket installation</li>
-            <li>$25</li>
-            <li>Free wheel/ casette installation</li>
-            <li>$12</li>
-            <li>Chain installation</li>
-            <li>$12</li>
-            <li>Cycle computer installation</li>
-            <li>$10</li>
-            <li>Grips installation</li>
-            <li>$10</li>
-            <li>Handlebar tape installation</li>
-            <li>$15</li>
-            <li>Headset installation/ overhaul</li>
-            <li>$20</li>
-            <li>Kickstand installation</li>
-            <li>$10</li>
-            <li>Tubular install w/ glue (exclude glue)</li>
-            <li>$40</li>
-            <li>Tubular install w/ tape (exculde tape)</li>
-            <li>$130</li>
-            <li>*Tubular not included</li>
-        </ol>            
-        <h3>*All parts extra + tax</h3>
+      <Divider />
+          <br></br>
+          <Tuneup/>
+          <h4 className={classes.shortDesc} ><b><p>*All parts needed in the tune-up are extra charge plus tax</p>
+          <p>*No charge on installation of in-store purchased parts</p></b></h4>
+        <h2>SERVICES ON DEMAND</h2>
+        <Divider />
+        <br></br>
+        <TableContainer component={Paper} className={classes.shortDesc} >
+      <Table className={classes.table} aria-label="customized table">
+        <TableHead>
+          <TableRow>
+            <StyledTableCell>Service</StyledTableCell>
+            <StyledTableCell>Price</StyledTableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+        {rows.map((row, i) => {
+          prepareRow(row);
+          return (
+            <StyledTableRow {...row.getRowProps()}>
+              {row.cells.map(cell => {
+                return (
+                  <StyledTableCell {...cell.getCellProps()}>
+                    {cell.render("Cell")}
+                  </StyledTableCell>
+                );
+              })}
+            </StyledTableRow>
+          );
+        })}
+        </TableBody>
+      </Table>
+    </TableContainer>
+        <br></br>
+        <h4 className={classes.shortDesc}><strong>*All parts extra charge plus tax</strong></h4>
     </div>
+
     );
-  }
 }
  
-export default Service;
