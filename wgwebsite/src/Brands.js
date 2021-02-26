@@ -1,25 +1,19 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
-import Grid from '@material-ui/core/Grid';
 import GridListTile from '@material-ui/core/GridListTile';
-import Box from '@material-ui/core/Box';
-import Typography from "@material-ui/core/Typography";
+
 import kuota from './kuota.png';
 import felt from './felt.png';
-import khs from './khs.jpg';
+import khs from './KHSr.png';
 import kali from './kaliprotectives.jpg';
-
 import shimano from './Shimano.png';
-
 import damco from './damco.png';
 import icetoolz from './icetoolz.jpg';
-
 import continental from "./continental.png";
 import kenda from "./Kenda.png";
 import crankbrothers from "./Crank-Brothers-Logo.jpg";
 import selleroyal from "./selleroyal.png";
-
 import ravemen from "./ravemen.png";
 import zefal from "./zefal.jpeg";
 import pearlizumi from "./pearl-izumi.png";
@@ -36,19 +30,12 @@ https://acsdistributing.com/brand-gemini.php
 https://acsdistributing.com/brand-jetblack.php
 https://acsdistributing.com/brand-kaliprotectives.php
 
-
-kuota gravel and racing
-khs everything but racing plus ebikes
-felt hybrid done
-
-
-
 */
 
 const tileData =[
-    {
+    /*{
         img: khs,
-        url: 'https://acsdistributing.com/brand-khs.php',
+        url: 'https://khsbicycles.com/',
         title: '',
         
       },
@@ -61,7 +48,7 @@ const tileData =[
       img: felt,
       url: 'https://can-en.feltbicycles.com/',
       title: '',
-    },
+    },*/
     {
       img: shimano,
       url: 'https://www.shimano.com/en/',
@@ -137,26 +124,66 @@ const useStyles = makeStyles((theme) => ({
       display: 'flex',
       flexWrap: 'wrap',
       justifyContent: 'space-around',
-      
+      fontFamily: 'arial',
       overflow: 'hidden',
       backgroundColor: theme.palette.background.paper,
-      margin: '3rem',
-  
+     // margin: '3rem',
+      position: "relative",
+      top: "-1.7rem",
+    },
+    title: {
+      textAlign: 'center',
+      color: 'white'
+    },
+    bar: {
+      backgroundColor: 'black',
+      width: "100%"
     },
     gridList: {
       width: "auto",
-      height: "auto"
+      height: "auto",
+      minWidth: "50%",
+      minHeight: "20%",
+      maxWidth: "90%",
+      maxHeight: "75%",
     },
     heading: {
         fontSize: theme.typography.pxToRem(20)
     },
-    image:{
+    boxsize:{
       maxWidth: '100%',
-      maxHeight: '80%',
+      width: "500px",
+      height: "auto",
+      minHeight: '20%',
+      minWidth: '20%',
       display: 'flex',
       //flexWrap: 'wrap',
-      justifyContent: 'space-around',
-      flexDirection: 'row',
+      justifyContent: 'center',
+      
+    },
+    mainlogos:{
+      display: 'flex',
+      justifyContent: 'space-between',
+      width: "80%",
+      maxWidth: "500px",
+      height: "50%",
+      maxHeight: "300px",
+      margin: "2rem",
+      padding: theme.spacing(6, 6),
+
+
+    },
+    image:{
+      maxWidth: '80%',
+      width: "80%",
+      height: "auto",
+      minHeight: '30%',
+      minWidth: '30%',
+      display: 'flex',
+      //flexWrap: 'wrap',
+      justifyContent: 'center',
+    },
+    divider:{
     }
   }));
 
@@ -164,20 +191,20 @@ export default function Brands (){
     const classes = useStyles();
     return (
       <div className={classes.root}>
-      <Box
-        component={Grid}
-        container
-        boxShadow={3}
-        spacing={3}
-        style={{ padding: 10 }}
-      >
+        <div className={classes.bar}>
+        <h2 className={classes.title}>Brands</h2>
+        </div>
+        <a href="https://khsbicycles.com/">
+          <img src={khs} alt="khs" className={classes.mainlogos}/>
+          </a>
+          <a href="https://can-en.feltbicycles.com/">
+          <img src={felt} alt="felt" className={classes.mainlogos}/>
+          </a>
+          <a href="http://kuotaamericas.com/">
+          <img src={kuota} alt="kuota" className={classes.mainlogos}/>        
+          </a>
         
-        <img className={classes.image} src={khs} alt="kali" />
-        <img className={classes.image} src={kuota} alt="kali" />        
-        <img className={classes.image} src={felt} alt="kali" />
         
-        </Box>
-        <br></br>
         <GridList
         cellHeight={250}
         cellWidth={300}
@@ -189,7 +216,7 @@ export default function Brands (){
         {tileData.length > 0 &&
         tileData.map((tile) => {
             return (
-            <GridListTile
+            <GridListTile component="a" href={tile.url}
                 to={tile.url}
                 key={tile.url}
             >

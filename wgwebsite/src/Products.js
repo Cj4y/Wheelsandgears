@@ -25,48 +25,8 @@ import fatbike from "./khs4season500.jpg";
 import acc from "./acc.jpg";
 import kuota from './kuota.png';
 import felt from './felt.png';
-import khs from './khs.jpg';
+import khs from './KHSr.png';
 
-
-/*
-
-
-
-const useStyles = makeStyles({
-        root: {
-            //width: '70%',
-            //maxWidth: 650,
-            //display: 'flex',
-            
-            fontFamily: 'arial',
-            display: 'flex',
-            margin: '5rem',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            position: "relative",
-            top: "5rem",
-            //flexDirection: 'column',
-           // justifyContent: 'center',
-            
-            //backgroundColor: theme.palette.background.paper,
-        },
-        bar: {
-            backgroundColor: 'black',
-            width: "100%"
-          },
-        content:
-        {
-            padding: '1rem',
-            textAlignment: "center",
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-        },
-        title: {
-            textAlign: 'center',
-            color: 'white'
-          },
-      });*/
     
 
 const useStyles = makeStyles((theme) => ({
@@ -79,10 +39,19 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-around',
     overflow: 'hidden',
     width: 'auto',
-      height: 'auto',
-      //maxWidth: "85%",
-      maxHeight: '80%'
-    
+    height: 'auto',
+    //maxWidth: "85%",
+    maxHeight: '80%',
+    position: "relative",
+    top: "-1.7rem",
+  },
+  title: {
+    textAlign: 'center',
+    color: 'white'
+  },
+  bar: {
+    backgroundColor: 'black',
+    width: "100%"
   },
   gridList: {
     width: "auto",
@@ -104,12 +73,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 /*
 brands
-http://www.kuotaamericas.com/bikes/cyclocross-mtb/k-all-road-lfs-disc
-http://www.kuotaamericas.com/bikes/road/kobalt
-https://khsbicycles.com/bikes/2020-khs-models/tempe-20/
-https://khsbicycles.com/bikes/2020-khs-models/prescott-20/
-https://khsbicycles.com/bikes/2021-khs-models/4-season-500-2021/
-https://khsbicycles.com/bikes/ultrasport-1-16/
+
+
+
+
+
+
 
 
 
@@ -122,49 +91,49 @@ https://khsbicycles.com/bikes/ultrasport-1-16/
       img: kuota,
       title: 'KUOTA',
       author: '',
-      link: "",
+      link: "http://www.kuotaamericas.com/",
     },
     {
       img: kuotaf,
-      title: 'KUOTA K-all road LTS disk',
+      title: 'KUOTA K-all road LFS disk',
       author: 'Gravel',
-      link: "",
+      link: "http://www.kuotaamericas.com/bikes/cyclocross-mtb/k-all-road-lfs-disc",
     },
     {
       img: kuotah,
       title: 'KUOTA Kobalt',
       author: 'Road',
-      link: "",
+      link: "http://www.kuotaamericas.com/bikes/road/kobalt",
     },
     {
       img: khs,
       title: 'KHS',
       author: '',
-      link: "",
+      link: "https://khsbicycles.com/",
     },
     {
       img: khsc,
       title: 'KHS Tempe',
       author: 'Mountain bike',
-      link: "",
+      link: "https://khsbicycles.com/bikes/2020-khs-models/tempe-20/",
     },
     {
       img: khsb,
       title: 'KHS Prescott',
       author: 'XC racing',
-      link: "",
+      link: "https://khsbicycles.com/bikes/2020-khs-models/prescott-20/",
     },
     {
       img: khsa,
       title: 'KHS ATB 500',
       author: 'Fat bike',
-      link: "",
+      link: "https://khsbicycles.com/bikes/2021-khs-models/4-season-500-2021/",
     },
     {
       img: khsd,
       title: 'KHS Ultra sport 1.0',
       author: 'Hybrid',
-      link: "",
+      link: "https://khsbicycles.com/bikes/ultrasport-1-16/",
     },
     {
       img: khse,
@@ -176,7 +145,7 @@ https://khsbicycles.com/bikes/ultrasport-1-16/
       img: felt,
       title: 'FELT',
       author: '',
-      link: "",
+      link: "https://can-en.feltbicycles.com/",
     },
     {
       img: felti,
@@ -191,6 +160,9 @@ export default function Products() {
 
   return (
     <div className={classes.root}>
+    <div className={classes.bar}>
+        <h2 className={classes.title}>Products</h2>
+      </div>
       <GridList 
        className={classes.gridList}
         cellHeight={400}
@@ -198,7 +170,7 @@ export default function Products() {
         cols={3}
       >
         {tileData.map((tile) => (
-          <GridListTile key={tile.img} component="a" href={tile.link}>
+          <GridListTile key={tile.img} component="a" href="#/brands">
             <img src={tile.img} alt={tile.title} className={classes.tilesize} />
             <GridListTileBar
               title={tile.title}

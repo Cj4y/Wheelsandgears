@@ -12,8 +12,8 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
     root: {
-       // width: '70%',
-        //maxWidth: '800px',
+        // width: '70%',
+        
         //maxWidth: 650,
         fontFamily: 'arial',
         display: 'flex',
@@ -21,7 +21,7 @@ const useStyles = makeStyles({
         flexDirection: 'column',
         justifyContent: 'center',
         position: "relative",
-        top: "3rem",
+        top: "-1.7rem",
         //padding: '2rem'
         //backgroundColor: theme.palette.background.paper,
     },
@@ -37,7 +37,9 @@ const useStyles = makeStyles({
         width: "100%"
       },
       content: {
-          margin: '1rem 10rem'
+          margin: '1rem 5rem',
+          width: "auto",
+          minWidth: '400px',
       }
   });
 

@@ -5,6 +5,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+
 /*
 https://khsbicycles.com/bikes/2021-khs-models/4-season-500-2021/
 https://khsbicycles.com/bikes/ultrasport-1-16/
@@ -19,12 +20,13 @@ root: {
     //maxWidth: '800px',
     //maxWidth: 650,
     fontFamily: 'arial',
+    fontType: "strong",
     display: 'flex',
     //margin: '5rem',
     flexDirection: 'column',
     //justifyContent: 'center',
     position: "relative",
-    top: "3rem",
+    top: "-1.7rem",
     //padding: '2rem'
     //backgroundColor: theme.palette.background.paper,
 },
@@ -55,7 +57,7 @@ export default function Home (){
         <div className={classes.bar}>
             <h2 className={classes.title}>Welcome to Wheels & Gears</h2>
         </div>
-    <Card className={classes.content}>
+    <Card className={classes.content} component="a" href="#/products">
       <CardActionArea>
         <CardMedia
           component="img"
@@ -74,7 +76,7 @@ export default function Home (){
         </CardContent>
       </CardActionArea>
     </Card>
-    <Card className={classes.content}>
+    <Card className={classes.content} component="a" href="#/products">
       <CardActionArea>
         <CardMedia
           component="img"
@@ -95,7 +97,7 @@ export default function Home (){
         </CardContent>
       </CardActionArea>
       </Card>
-      <Card className={classes.content}>
+      <Card className={classes.content} component="a" href="#/products">
       <CardActionArea>
         <CardMedia
           component="img"
@@ -108,7 +110,7 @@ export default function Home (){
         />
         <CardContent>
           <Typography gutterBottom variant="h2" component="h2">
-            KHS All-road LFS
+            KUOTA K-all road LFS disk
           </Typography>
           <Typography variant="body1" component="h2" >
            

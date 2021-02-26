@@ -74,9 +74,8 @@ const columns = [
       flexDirection: 'column',
       justifyContent: 'center',
       position: "relative",
-      top: "3rem",
+      top: "-1.7rem",
       fontFamily: 'arial',
-      
     },
     title: {
       textAlign: 'center',
@@ -122,7 +121,7 @@ export default function Service() {
       </div>
       <Divider />
         <div className={classes.shortDesc} >
-            <p>Our knowledgeable and expeienced bicycle mechanic does 
+            <p>Our knowledgeable and experienced bicycle mechanic does 
     excellent tune-ups, repairs, and bike builds.</p>
             <p>We provide maintenance and repairs on all bicycle brands, makes, and models.</p>
         </div>

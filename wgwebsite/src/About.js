@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         justifyContent: 'center',
         position: "relative",
-        top: "3rem",        
+        top: "-1.7rem",
         //backgroundColor: theme.palette.background.paper,
     },
     bar: {
