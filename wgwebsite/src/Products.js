@@ -95,7 +95,7 @@ brands
     },
     {
       img: kuotaf,
-      title: 'KUOTA K-all road LFS disk',
+      title: 'KUOTA K-all road LFS disc',
       author: 'Gravel',
       link: "http://www.kuotaamericas.com/bikes/cyclocross-mtb/k-all-road-lfs-disc",
     },
@@ -175,6 +175,7 @@ export default function Products() {
             <GridListTileBar
               title={tile.title}
               subtitle={<span>{tile.author}</span>}
+
             />
           </GridListTile>
         ))}

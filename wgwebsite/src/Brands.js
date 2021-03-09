@@ -146,6 +146,8 @@ const useStyles = makeStyles((theme) => ({
       minHeight: "20%",
       maxWidth: "90%",
       maxHeight: "75%",
+      position: "relative",
+      top: "12rem",
     },
     heading: {
         fontSize: theme.typography.pxToRem(20)
@@ -194,20 +196,21 @@ export default function Brands (){
         <div className={classes.bar}>
         <h2 className={classes.title}>Brands</h2>
         </div>
-        <a href="https://khsbicycles.com/">
+        <a href="https://acsdistributing.com/brand-khs.php">
           <img src={khs} alt="khs" className={classes.mainlogos}/>
-          </a>
-          <a href="https://can-en.feltbicycles.com/">
-          <img src={felt} alt="felt" className={classes.mainlogos}/>
           </a>
           <a href="http://kuotaamericas.com/">
           <img src={kuota} alt="kuota" className={classes.mainlogos}/>        
           </a>
-        
-        
+          <a href="https://can-en.feltbicycles.com/">
+          <img src={felt} alt="felt" className={classes.mainlogos} position = "center"
+      right= "70rem"/>
+          </a>  
+          <div width="500px" height="500px">-</div>
+          
         <GridList
-        cellHeight={250}
-        cellWidth={300}
+        cellHeight={380}
+        cellWidth={500}
         cols={3}
         className={classes.gridList}
         spacing={50}
@@ -225,6 +228,7 @@ export default function Brands (){
             );
         })}
         </GridList>
+        <br></br>
     </div>
     );
 }

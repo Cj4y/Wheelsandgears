@@ -128,8 +128,6 @@ export default function Service() {
       <Divider />
           <br></br>
           <Tuneup/>
-          <h4 className={classes.shortDesc} ><b><p>*All parts needed in the tune-up are extra charge plus tax</p>
-          <p>*No charge on installation of in-store purchased parts</p></b></h4>
         <h2>SERVICES ON DEMAND</h2>
         <Divider />
         <br></br>
@@ -160,7 +158,8 @@ export default function Service() {
       </Table>
     </TableContainer>
         <br></br>
-        <h4 className={classes.shortDesc}><strong>*All parts extra charge plus tax</strong></h4>
+        <h4 className={classes.shortDesc} ><b><p>*All parts needed in the tune-up are extra charge plus tax.</p>
+        </b></h4>
     </div>
 
     );

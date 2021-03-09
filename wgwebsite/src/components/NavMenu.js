@@ -177,7 +177,9 @@ const getDrawerChoices = () => {
     return(
       <div>
       <div className={classes.banner}>
+      <a href="#/">
       <Logo src={logo} alt="Wheels & Gears" href="/"/>
+      </a>
       <div className={classes.contacttop}>
       <ListItem>
         <ListItemIcon><PhoneIcon color="disabled" fontSize="small" /></ListItemIcon>
@@ -208,7 +210,9 @@ const getDrawerChoices = () => {
     return (
       <header>
           <div className={classes.bannermobile}>
+      <a href="#/">
       <Logo src={logo} alt="Wheels & Gears" href="/"/>
+      </a>
       </div>
       <div className={classes.contacttop}>
       <ListItem>

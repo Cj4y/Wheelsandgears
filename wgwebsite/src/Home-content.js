@@ -18,7 +18,6 @@ const useStyles = makeStyles({
 root: {
    // width: '70%',
     //maxWidth: '800px',
-    //maxWidth: 650,
     fontFamily: 'arial',
     fontType: "strong",
     display: 'flex',
@@ -42,10 +41,15 @@ content: {
     //margin: '1rem 10rem',
     fontFamily: 'arial',
     display: 'flex',
-    margin: '5rem',
+    margin: 'auto',
     flexDirection: 'row',
     justifyContent: 'center',
+    flexWrap: 'wrap',
+    
     width:"auto",
+    maxWidth: "800px",
+    height: "auto",
+    textAlign: 'center',
 }
 });
     
@@ -110,7 +114,7 @@ export default function Home (){
         />
         <CardContent>
           <Typography gutterBottom variant="h2" component="h2">
-            KUOTA K-all road LFS disk
+            KUOTA K-all road LFS disc
           </Typography>
           <Typography variant="body1" component="h2" >
            

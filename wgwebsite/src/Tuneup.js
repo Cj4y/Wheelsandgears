@@ -50,8 +50,8 @@ const useStyles = makeStyles((theme) => ({
       flexDirection: 'column',
       justifyContent: 'center',
       //justifyContent: 'center',
-      padding: theme.spacing(2, 8),
-      width:"200px",
+      padding: theme.spacing(2, 2),
+      width:"250px",
       height: "auto",
       minWidth: 50
     },
@@ -61,20 +61,27 @@ const useStyles = makeStyles((theme) => ({
     const classes = useStyles(); 
 
     const services = [
-        {"bronze": "Wheel timing"},
-        {"bronze": "Headset adjustment"},
-        {"bronze": "Gears adjustment"},
-        {"bronze": "Brake adjustment"},
-        {"bronze": "Drive train lubrication"},
-        {"bronze": "Tire pressure (check)"},
+        {"bronze": "Adjust front and rear derailleur"},
+        {"bronze": "Adjust front and rear brakes"},
+        {"bronze": "True wheels"},
+        {"bronze": "Adjust front and rear hubs"},
+        {"bronze": "Clean and lube drive train"},
+        {"bronze": "Lube cables"},
+        {"bronze": "Inflate tires"},
         {"bronze": "Safety check"},
-        {"silver":"Bicycle full clean-up"},
-        {"silver":"Full disassembly of bicycle parts "},
-        {"silver":"Clean and grease all moving parts "},
-        {"silver":"Full tune-up"},
+        {"silver": "Adjust front and rear derailleur"},
+        {"silver": "Adjust front and rear brakes"},
+        {"silver": "True wheels"},
+        {"silver": "Adjust front and rear hubs"},
+        {"silver": "Clean and lube drive train"},
+        {"silver": "Lube cables"},
+        {"silver": "Clean bicycle"},
+        {"silver": "Inflate tires"},
+        {"silver": "Safety check"},
+        
       ];
-      const bronze = services.slice(0,6).map((d) => <li key={d.bronze}>{d.bronze}</li>); 
-      const silver = services.slice(7,10).map((d) => <li key={d.silver}>{d.silver}</li>); 
+      const bronze = services.slice(0,8).map((d) => <li key={d.bronze}>{d.bronze}</li>); 
+      const silver = services.slice(8,17).map((d) => <li key={d.silver}>{d.silver}</li>); 
             
       const details = [bronze, silver];
 
@@ -105,7 +112,6 @@ const useStyles = makeStyles((theme) => ({
                 <Typography className={classes.heading}>{serviceTitle[1]}</Typography>
             </div>
               <div className={classes.column}>
-                All services in bronze tune-up plus: 
                 {details[1]}  
               </div>           
               </Paper>
